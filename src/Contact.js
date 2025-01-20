@@ -4,7 +4,6 @@ import axios from 'axios';
 function Contact() {   
 
    const options = {
-  method: 'POST',
   url: 'https://contact-us-backend-1.onrender.com/api/contact',
   headers: {
     'Content-Type': 'application/json'
