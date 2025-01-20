@@ -3,13 +3,6 @@ import axios from 'axios';
 
 function Contact() {   
 
-   const options = {
-  url: 'https://contact-us-backend-1.onrender.com/api/contact',
-  headers: {
-    'Content-Type': 'application/json'
-  }
-};
-
    const [topic, setTopic] = useState("");
    const [name, setName] = useState("");
    const [email, setEmail] = useState("");
@@ -36,7 +29,12 @@ function Contact() {
 
          try {
             // Make an Axios POST request
-            const response = await axios.post(options, formData);
+            const response = await axios.post('https://contact-us-backend-1.onrender.com/api/contact', formData, {
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
+
 
             if (response.status === 200) {
                alert("Your query has been submitted successfully!");
