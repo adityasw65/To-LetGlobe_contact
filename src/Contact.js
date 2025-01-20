@@ -8,7 +8,7 @@ function Contact() {
    const [email, setEmail] = useState("");
    const [message, setMessage] = useState("");
 
-   const sendData = async (e) => {
+   const sendData = (e) => {
       e.preventDefault(); // Prevent the default form submission behavior
 
       const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
