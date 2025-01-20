@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-function Contact() {
+function Contact() {   
 
    const options = {
   method: 'POST',
@@ -105,7 +105,7 @@ function Contact() {
                            Topic
                         </label>
                         <select name="topicList" id="topicList" className='text-md py-3 pl-4 rounded-lg bg-black text-[#9CA3AF] border' onChange={(e) => setTopic(e.target.value)} value={topic} required>
-                           <option value="" className='text-lg py-3 pl-4 rounded-lg bg-white border text-[#9CA3AF] font-websiteFont hover:text-black'>Select a topic</option>
+                           <option value="" className='text-lg py-3 pl-4 rounded-lg border text-[#9CA3AF] font-websiteFont hover:text-black'>Select a topic</option>
                            <option value="Residential">Residential</option>
                            <option value="Commercial">Commercial</option>
                            <option value="Others">Others</option>
