@@ -29,19 +29,20 @@ function Contact() {
          };
 
          try {
-            // Axios POST request
-            const response = await axios.post(
+            // Fetch POST request
+            const response = await fetch(
                "https://contact-us-backend-1.onrender.com/api/contact",
-               formData,
                {
+                  method: "POST",
                   headers: {
                      "Content-Type": "application/json",
                   },
+                  body: JSON.stringify(formData), // Convert data to JSON string
                }
             );
 
-            // Handle success
-            if (response.status === 200) {
+            // Handle success or error
+            if (response.ok) {
                alert("Your query has been submitted successfully!");
                setTopic("");
                setName("");
