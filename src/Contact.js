@@ -29,7 +29,7 @@ function Contact() {
 
          try {
             // Make an Axios POST request
-            const response = await axios.post('https://contact-us-backend-1.onrender.com', formData);
+            const response = await axios.post('https://contact-us-backend-1.onrender.com/api/contact', formData);
 
             if (response.status === 200) {
                alert("Your query has been submitted successfully!");
