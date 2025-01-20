@@ -20,36 +20,40 @@ function Contact() {
          }
 
          // Construct the data to send
-         const formData = {
-            topic,
-            name,
-            email,
-            message
-         };
+         // const formData = {
+         //    topic,
+         //    name,
+         //    email,
+         //    message
+         // };
 
-         try {
-            // Make an Axios POST request
-            const response = await axios.post('https://contact-us-backend-1.onrender.com/api/contact', formData, {
-  headers: {
-    'Content-Type': 'application/json',
-  },
-});
+         axios.post("https://66f76bdbb5d85f31a342ad71.mockapi.io/User", { topic: topic, username: name, email: email, message: message }).then((res) => {
+            console.log(res);
+         }).catch((error) => {
+            console.log(error);
+         });
 
+         // try {
+         //    // Make an Axios POST request
+         //    const response = await axios.post('url', formData);
 
-            if (response.status === 200) {
-               alert("Your query has been submitted successfully!");
-               setTopic("");
-               setName("");
-               setEmail("");
-               setMessage("");
-            } else {
-               alert("Something went wrong. Please try again later.");
-            }
-         } catch (error) {
-            console.error("Error submitting the form:", error);
-            alert("An error occurred while submitting the form. Please try again later.");
-         }
-      } else {
+         //    if (response.status === 200) {
+         //       alert("Your query has been submitted successfully!");
+         //       setTopic("");
+         //       setName("");
+         //       setEmail("");
+         //       setMessage("");
+         //    }
+         //    else {
+         //       alert("Something went wrong. Please try again later.");
+         //    }
+         // }
+         // catch (error) {
+         //    console.error("Error submitting the form:", error);
+         //    alert("An error occurred while submitting the form. Please try again later.");
+         // }
+      }
+      else {
          alert("Please fill in all the fields.");
       }
    };
