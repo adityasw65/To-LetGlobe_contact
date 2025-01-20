@@ -12,6 +12,14 @@ function Contact() {
       e.preventDefault(); // Prevent the default form submission behavior
 
       const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      const options = {
+  method: 'POST',
+  url: 'https://contact-us-backend-1.onrender.com/api/contact',
+  headers: {
+    'Content-Type': 'application/json'
+  }
+};
+
 
       if (topic && name && email && message) {
          if (!regexEmail.test(email)) {
@@ -27,7 +35,7 @@ function Contact() {
          //    message
          // };
 
-         axios.post("https://66f76bdbb5d85f31a342ad71.mockapi.io/User", { topic: topic, username: name, email: email, message: message }).then((res) => {
+         axios.post(options, { topic: topic, username: name, email: email, message: message }).then((res) => {
             console.log(res);
          }).catch((error) => {
             console.log(error);
