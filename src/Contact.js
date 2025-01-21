@@ -29,10 +29,10 @@ function Contact() {
 
          // Construct the data to send
          const formData = {
-            topic,
-            name,
-            email,
-            message
+            topic : topic,
+            username : name,
+            email : email,
+            message : message
          };
 
 
